@@ -13,6 +13,16 @@
 		1527EA0924A7B84100EDD71C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1527E9F424A7B84000EDD71C /* ContentView.swift */; };
 		1527EA0A24A7B84100EDD71C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1527E9F524A7B84100EDD71C /* Assets.xcassets */; };
 		1527EA0B24A7B84100EDD71C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1527E9F524A7B84100EDD71C /* Assets.xcassets */; };
+		1527EA1924A7B89D00EDD71C /* SideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1527EA1424A7B89D00EDD71C /* SideMenuView.swift */; };
+		1527EA1A24A7B89D00EDD71C /* SideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1527EA1424A7B89D00EDD71C /* SideMenuView.swift */; };
+		1527EA1B24A7B89D00EDD71C /* DeviceInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1527EA1524A7B89D00EDD71C /* DeviceInformation.swift */; };
+		1527EA1C24A7B89D00EDD71C /* DeviceInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1527EA1524A7B89D00EDD71C /* DeviceInformation.swift */; };
+		1527EA1D24A7B89D00EDD71C /* SwipeDirectionAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1527EA1624A7B89D00EDD71C /* SwipeDirectionAPI.swift */; };
+		1527EA1E24A7B89D00EDD71C /* SwipeDirectionAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1527EA1624A7B89D00EDD71C /* SwipeDirectionAPI.swift */; };
+		1527EA1F24A7B89D00EDD71C /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1527EA1724A7B89D00EDD71C /* DetailView.swift */; };
+		1527EA2024A7B89D00EDD71C /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1527EA1724A7B89D00EDD71C /* DetailView.swift */; };
+		1527EA2124A7B89D00EDD71C /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1527EA1824A7B89D00EDD71C /* NavigationBar.swift */; };
+		1527EA2224A7B89D00EDD71C /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1527EA1824A7B89D00EDD71C /* NavigationBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +34,11 @@
 		1527EA0224A7B84100EDD71C /* UniversalSwiftUISidebar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UniversalSwiftUISidebar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1527EA0424A7B84100EDD71C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1527EA0524A7B84100EDD71C /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
+		1527EA1424A7B89D00EDD71C /* SideMenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuView.swift; sourceTree = "<group>"; };
+		1527EA1524A7B89D00EDD71C /* DeviceInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceInformation.swift; sourceTree = "<group>"; };
+		1527EA1624A7B89D00EDD71C /* SwipeDirectionAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeDirectionAPI.swift; sourceTree = "<group>"; };
+		1527EA1724A7B89D00EDD71C /* DetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		1527EA1824A7B89D00EDD71C /* NavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +74,11 @@
 			children = (
 				1527E9F324A7B84000EDD71C /* UniversalSwiftUISidebarApp.swift */,
 				1527E9F424A7B84000EDD71C /* ContentView.swift */,
+				1527EA1724A7B89D00EDD71C /* DetailView.swift */,
+				1527EA1524A7B89D00EDD71C /* DeviceInformation.swift */,
+				1527EA1824A7B89D00EDD71C /* NavigationBar.swift */,
+				1527EA1424A7B89D00EDD71C /* SideMenuView.swift */,
+				1527EA1624A7B89D00EDD71C /* SwipeDirectionAPI.swift */,
 				1527E9F524A7B84100EDD71C /* Assets.xcassets */,
 			);
 			path = Shared;
@@ -187,6 +207,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1527EA1B24A7B89D00EDD71C /* DeviceInformation.swift in Sources */,
+				1527EA1F24A7B89D00EDD71C /* DetailView.swift in Sources */,
+				1527EA1D24A7B89D00EDD71C /* SwipeDirectionAPI.swift in Sources */,
+				1527EA1924A7B89D00EDD71C /* SideMenuView.swift in Sources */,
+				1527EA2124A7B89D00EDD71C /* NavigationBar.swift in Sources */,
 				1527EA0824A7B84100EDD71C /* ContentView.swift in Sources */,
 				1527EA0624A7B84100EDD71C /* UniversalSwiftUISidebarApp.swift in Sources */,
 			);
@@ -196,6 +221,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1527EA1C24A7B89D00EDD71C /* DeviceInformation.swift in Sources */,
+				1527EA2024A7B89D00EDD71C /* DetailView.swift in Sources */,
+				1527EA1E24A7B89D00EDD71C /* SwipeDirectionAPI.swift in Sources */,
+				1527EA1A24A7B89D00EDD71C /* SideMenuView.swift in Sources */,
+				1527EA2224A7B89D00EDD71C /* NavigationBar.swift in Sources */,
 				1527EA0924A7B84100EDD71C /* ContentView.swift in Sources */,
 				1527EA0724A7B84100EDD71C /* UniversalSwiftUISidebarApp.swift in Sources */,
 			);
