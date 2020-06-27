@@ -8,8 +8,25 @@
 import SwiftUI
 
 struct HomeView: View {
+    
+    let data = (1...10).map { "\($0)" }
+    
+    let columns = [
+        GridItem(.flexible()),
+        GridItem(.flexible())
+    ]
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        
+        return ScrollView {
+            LazyVGrid(columns: columns, spacing: 5) {
+                ForEach(data, id: \.self) { item in
+                    Image(item)
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                }
+            }
+        }
     }
 }
 

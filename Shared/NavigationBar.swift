@@ -10,7 +10,11 @@ import SwiftUI
 struct NavigationBar: View {
     var body: some View {
         List{
-            ForEach(0..<10) { i in
+            NavigationLink(destination: HomeView()){
+                Text("Home")
+            }
+            
+            ForEach(1..<11) { i in
                 NavigationLink(destination: DetailView()) {
                     Text("View \(i)")
                 }  

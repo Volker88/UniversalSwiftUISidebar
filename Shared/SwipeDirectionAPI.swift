@@ -6,20 +6,15 @@
 //
 
 
-// MARK: - Import
 import SwiftUI
 
-
-// MARK: - Struct / Class Definition
 class SwipeDirectionAPI {
     
     enum SwipeDirection: String {
         case left, right, up, down, none
     }
     
-    
-    // MARK: - Methods
-    static func detectDirection(value: DragGesture.Value) -> SwipeDirection {
+    static func getSwipeDirection(value: DragGesture.Value) -> SwipeDirection {
         
         #if os(iOS)
         let deviceWidth = UIScreen.main.bounds.width
@@ -29,13 +24,13 @@ class SwipeDirectionAPI {
         if value.startLocation.x < leftBorder.x && value.startLocation.x < value.location.x  {
             return .right
         }
-        if value.startLocation.x > rightBorder.x && value.startLocation.x > value.location.x + 24 {
+        else if value.startLocation.x > rightBorder.x && value.startLocation.x > value.location.x + 24 {
             return .left
         }
-        if value.startLocation.y < value.location.y - 24 {
+        else if value.startLocation.y < value.location.y - 24 {
             return .down
         }
-        if value.startLocation.y > value.location.y + 24 {
+        else if value.startLocation.y > value.location.y + 24 {
             return .up
         }
         #endif
