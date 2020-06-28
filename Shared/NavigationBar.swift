@@ -10,14 +10,14 @@ import SwiftUI
 struct NavigationBar: View {
     var body: some View {
         List{
-            NavigationLink(destination: HomeView()){
+            NavigationLink(destination: ContentView().hideNavigationBarBackButton()){
                 Text("Home")
             }
             
             ForEach(1..<11) { i in
                 NavigationLink(destination: DetailView(viewNumber: "\(i)")) {
                     Text("View \(i)")
-                }  
+                }
             }
         }
         .listStyle(SidebarListStyle())

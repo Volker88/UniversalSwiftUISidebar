@@ -82,3 +82,21 @@ extension View {
         self.modifier(CustomNavigationBarTitleModifier(title: title ))
     }
 }
+
+
+struct HideNavigationBarBackButton: ViewModifier {
+    
+    func body(content: Content) -> some View {
+        #if os(iOS)
+        return AnyView(content.hideNavigationBarBackButton())
+        #else
+            return AnyView(content)
+        #endif
+    }
+}
+
+extension View {
+    func hideNavigationBarBackButton() -> some View {
+        self.modifier(HideNavigationBarBackButton())
+    }
+}
