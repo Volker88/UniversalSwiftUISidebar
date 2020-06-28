@@ -19,14 +19,14 @@
 		1527EA0B24A7B84100EDD71C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1527E9F524A7B84100EDD71C /* Assets.xcassets */; };
 		1527EA1924A7B89D00EDD71C /* SideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1527EA1424A7B89D00EDD71C /* SideMenuView.swift */; };
 		1527EA1A24A7B89D00EDD71C /* SideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1527EA1424A7B89D00EDD71C /* SideMenuView.swift */; };
-		1527EA1B24A7B89D00EDD71C /* DeviceInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1527EA1524A7B89D00EDD71C /* DeviceInformation.swift */; };
-		1527EA1C24A7B89D00EDD71C /* DeviceInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1527EA1524A7B89D00EDD71C /* DeviceInformation.swift */; };
 		1527EA1D24A7B89D00EDD71C /* SwipeDirectionAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1527EA1624A7B89D00EDD71C /* SwipeDirectionAPI.swift */; };
 		1527EA1E24A7B89D00EDD71C /* SwipeDirectionAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1527EA1624A7B89D00EDD71C /* SwipeDirectionAPI.swift */; };
 		1527EA1F24A7B89D00EDD71C /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1527EA1724A7B89D00EDD71C /* DetailView.swift */; };
 		1527EA2024A7B89D00EDD71C /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1527EA1724A7B89D00EDD71C /* DetailView.swift */; };
 		1527EA2124A7B89D00EDD71C /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1527EA1824A7B89D00EDD71C /* NavigationBar.swift */; };
 		1527EA2224A7B89D00EDD71C /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1527EA1824A7B89D00EDD71C /* NavigationBar.swift */; };
+		15D7108924A89126007617E3 /* PictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15D7108824A89126007617E3 /* PictureView.swift */; };
+		15D7108A24A89126007617E3 /* PictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15D7108824A89126007617E3 /* PictureView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,10 +41,10 @@
 		1527EA0424A7B84100EDD71C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1527EA0524A7B84100EDD71C /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		1527EA1424A7B89D00EDD71C /* SideMenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuView.swift; sourceTree = "<group>"; };
-		1527EA1524A7B89D00EDD71C /* DeviceInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceInformation.swift; sourceTree = "<group>"; };
 		1527EA1624A7B89D00EDD71C /* SwipeDirectionAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeDirectionAPI.swift; sourceTree = "<group>"; };
 		1527EA1724A7B89D00EDD71C /* DetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		1527EA1824A7B89D00EDD71C /* NavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
+		15D7108824A89126007617E3 /* PictureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,15 +79,15 @@
 			isa = PBXGroup;
 			children = (
 				1527E9F524A7B84100EDD71C /* Assets.xcassets */,
+				1527E9F324A7B84000EDD71C /* UniversalSwiftUISidebarApp.swift */,
 				1527E9F424A7B84000EDD71C /* ContentView.swift */,
 				151F0D1424A7CE46006327EA /* CustomModifier.swift */,
 				1527EA1724A7B89D00EDD71C /* DetailView.swift */,
-				1527EA1524A7B89D00EDD71C /* DeviceInformation.swift */,
 				151F0D1724A7D67A006327EA /* HomeView.swift */,
 				1527EA1824A7B89D00EDD71C /* NavigationBar.swift */,
+				15D7108824A89126007617E3 /* PictureView.swift */,
 				1527EA1424A7B89D00EDD71C /* SideMenuView.swift */,
 				1527EA1624A7B89D00EDD71C /* SwipeDirectionAPI.swift */,
-				1527E9F324A7B84000EDD71C /* UniversalSwiftUISidebarApp.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -216,10 +216,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				151F0D1824A7D67A006327EA /* HomeView.swift in Sources */,
-				1527EA1B24A7B89D00EDD71C /* DeviceInformation.swift in Sources */,
 				151F0D1524A7CE46006327EA /* CustomModifier.swift in Sources */,
 				1527EA1F24A7B89D00EDD71C /* DetailView.swift in Sources */,
 				1527EA1D24A7B89D00EDD71C /* SwipeDirectionAPI.swift in Sources */,
+				15D7108924A89126007617E3 /* PictureView.swift in Sources */,
 				1527EA1924A7B89D00EDD71C /* SideMenuView.swift in Sources */,
 				1527EA2124A7B89D00EDD71C /* NavigationBar.swift in Sources */,
 				1527EA0824A7B84100EDD71C /* ContentView.swift in Sources */,
@@ -232,10 +232,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				151F0D1924A7D67A006327EA /* HomeView.swift in Sources */,
-				1527EA1C24A7B89D00EDD71C /* DeviceInformation.swift in Sources */,
 				151F0D1624A7CE46006327EA /* CustomModifier.swift in Sources */,
 				1527EA2024A7B89D00EDD71C /* DetailView.swift in Sources */,
 				1527EA1E24A7B89D00EDD71C /* SwipeDirectionAPI.swift in Sources */,
+				15D7108A24A89126007617E3 /* PictureView.swift in Sources */,
 				1527EA1A24A7B89D00EDD71C /* SideMenuView.swift in Sources */,
 				1527EA2224A7B89D00EDD71C /* NavigationBar.swift in Sources */,
 				1527EA0924A7B84100EDD71C /* ContentView.swift in Sources */,

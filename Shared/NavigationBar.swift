@@ -15,13 +15,12 @@ struct NavigationBar: View {
             }
             
             ForEach(1..<11) { i in
-                NavigationLink(destination: DetailView()) {
+                NavigationLink(destination: DetailView(viewNumber: "\(i)")) {
                     Text("View \(i)")
                 }  
             }
         }
         .listStyle(SidebarListStyle())
-        //.navigationBarTitle("Navigation", displayMode: .inline)
     }
 }
 

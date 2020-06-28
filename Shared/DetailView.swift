@@ -9,16 +9,17 @@ import SwiftUI
 
 struct DetailView: View {
     
-    //let viewNumber: Int
+    let viewNumber: String
     
     var body: some View {
-        Text("DetailView")
-            .navigationBarTitle("DetailView", displayMode: .inline)
+        Text("DetailView \(viewNumber)")
+            .customNavigationBarTitleModifier("DetailView")
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
 }
 
-//struct DetailView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        DetailView()
-//    }
-//}
+struct DetailView_Previews: PreviewProvider {
+    static var previews: some View {
+        DetailView(viewNumber: "1")
+    }
+}

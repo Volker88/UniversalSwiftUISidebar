@@ -20,13 +20,19 @@ struct HomeView: View {
         
         return ScrollView {
             LazyVGrid(columns: columns, spacing: 5) {
-                ForEach(data, id: \.self) { item in
-                    Image(item)
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
+                ForEach(data, id: \.self) { image in
+                    
+                    NavigationLink(destination: PictureView(name: "\(image)")){
+                        Image(image)
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                    }
+                    .buttonStyle(PlainButtonStyle())
                 }
             }
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .customNavigationBarTitleModifier("Home")
     }
 }
 

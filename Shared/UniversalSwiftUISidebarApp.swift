@@ -17,10 +17,14 @@ struct UniversalSwiftUISidebarApp: App {
                 if UIDevice.current.userInterfaceIdiom == .pad || UIDevice.current.userInterfaceIdiom == .mac {
                     NavigationBar()
                 }
+                #elseif os(macOS)
+                NavigationBar()
                 #endif
                 ContentView()
+                    
             }
             .customNavigationLayoutStyle()
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
     }
 }

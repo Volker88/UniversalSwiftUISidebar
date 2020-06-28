@@ -62,3 +62,23 @@ extension View {
     }
 }
 
+
+struct CustomNavigationBarTitleModifier: ViewModifier {
+    
+    let title: String
+    
+    func body(content: Content) -> some View {
+        #if os(iOS)
+            return AnyView(content
+                            .navigationBarTitle("\(title)", displayMode: .inline))
+        #else
+            return AnyView(content)
+        #endif
+    }
+}
+
+extension View {
+    func customNavigationBarTitleModifier(_ title: String) -> some View {
+        self.modifier(CustomNavigationBarTitleModifier(title: title ))
+    }
+}
