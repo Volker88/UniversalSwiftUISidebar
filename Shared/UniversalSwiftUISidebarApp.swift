@@ -14,7 +14,7 @@ struct UniversalSwiftUISidebarApp: App {
         WindowGroup {
             NavigationView {
                 #if os(iOS)
-                if UIDevice.current.userInterfaceIdiom == .pad || UIDevice.current.userInterfaceIdiom == .mac {
+                if UIDevice.current.userInterfaceIdiom == .pad {
                     NavigationBar()
                 }
                 #elseif os(macOS)

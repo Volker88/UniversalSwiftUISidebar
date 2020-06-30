@@ -16,17 +16,15 @@ struct ContentView: View {
         return GeometryReader { g in
             ZStack {
                 
-                HomeView()
+                HomeView(sideBarOpen: $sideBarOpen)
                 
                 SideMenuView(width: 300,
                              isOpen: self.sideBarOpen,
                              menuClose: { self.sideBarOpen = false })
                     .animation(.easeInOut)
             }
-            
         }
         .customNavigationBarTitleModifier("Home")
-        .navigationBarItemModifier(completion: { self.sideBarOpen.toggle() })
         .gesture(
             DragGesture(minimumDistance: 50)
                 .onChanged { value in

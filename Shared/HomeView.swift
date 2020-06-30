@@ -9,6 +9,8 @@ import SwiftUI
 
 struct HomeView: View {
     
+    @Binding var sideBarOpen: Bool
+    
     let data = (1...10).map { "\($0)" }
     
     let columns = [
@@ -28,19 +30,6 @@ struct HomeView: View {
                     ZStack {
                         PictureView(name: "\(image)")
                             .frame(maxWidth: .infinity, maxHeight: .infinity)
-                        
-                        //#if os(macOS)
-                            Button(action: {
-                                isPresented.toggle()
-                            }) {
-                                Text("Back")
-                            }
-                            .padding(5)
-                            .background(Color.white)
-                            .opacity(0.8)
-                            .cornerRadius(10)
-                            .position(x: 50, y: 20)
-                        //#endif
                     }
                 } else {
                     LazyVGrid(columns: columns, spacing: 5) {
@@ -61,13 +50,16 @@ struct HomeView: View {
                 }
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .customNavigationBarTitleModifier("Home")
+            .customNavigationBarTitleModifier("Hello")
+            .toolBarModifier(toggleMenu: { self.sideBarOpen.toggle() }, leftButtonAction: { self.isPresented = false }, rightButtonAction: { } )
+            
         }
     }
 }
 
+
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView()
+        HomeView(sideBarOpen: .constant(false))
     }
 }

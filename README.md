@@ -14,6 +14,9 @@ In Xcode 12 Apple introduced a new Sidebar for iPad and macOS. However on iPhone
 I modified this template in the way that i get on macOS, iOS and iPadOS, independent from the device orientation a sidebar.
 
 
+It's not yet perfect or in some areas it's probably way too complicated. If someone has some ideas how to make some areas more generic or less complex feel free to contribute to this project.
+
+
 ## macOS
 ![macOS](./screenshots/macOS.png "macOS")
 
