@@ -30,7 +30,11 @@ struct ContentView: View {
                 .onChanged { value in
                     let direction = SwipeDirectionAPI.getSwipeDirection(value: value)
                     if direction == .right {
-                        self.sideBarOpen = true
+                        #if os(iOS)
+                        if UIDevice.current.userInterfaceIdiom == .phone {
+                            self.sideBarOpen = true
+                        }
+                        #endif
                     }
                 })
     }

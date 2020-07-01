@@ -38,102 +38,9 @@ extension View {
 }
 
 
-struct ToolBarModifier: ViewModifier {
-    
-    var toggleMenu: () -> Void
-    var leftButtonAction: () -> Void
-    var rightButtonAction: () -> Void
-    
-    func body(content: Content) -> some View {
-        #if os(iOS)
-        if UIDevice.current.userInterfaceIdiom == .phone {
-            return AnyView(content
-                            .navigationBarItems(leading:
-                                                    Button(action: {
-                                                        toggleMenu()
-                                                    }) {
-                                                        Image(systemName: "sidebar.left")
-                                                    }, trailing:
-                                                        HStack {
-                                                            Button(action: {
-                                                                leftButtonAction()
-                                                            }) {
-                                                                Image(systemName: "backward")
-                                                            }
-                                                            Spacer(minLength: 10)
-                                                            Button(action: {
-                                                                rightButtonAction()
-                                                            }) {
-                                                                Image(systemName: "forward")
-                                                            }
-                                                        }))
-        } else {
-            return AnyView(content
-                            .navigationBarItems(trailing:
-                                                        HStack {
-                                                            Button(action: {
-                                                                leftButtonAction()
-                                                            }) {
-                                                                Image(systemName: "backward")
-                                                            }
-                                                            Spacer(minLength: 10)
-                                                            Button(action: {
-                                                                rightButtonAction()
-                                                            }) {
-                                                                Image(systemName: "forward")
-                                                            }
-                                                        }))
-            
-        }
-        #else
-        return AnyView(content
-                        .toolbar {
-                            ToolbarItem {
-                                Button {
-                                    leftButtonAction()
-                                } label: {
-                                    HStack {
-                                        Image(systemName: "backward")
-                                        Text("Back")
-                                    }
-                                    .padding(5)
-                                    .foregroundColor(Color.white)
-                                    .background(Color.secondary)
-                                    .opacity(0.7)
-                                    .cornerRadius(10)
-                                }
-                            }
-                            ToolbarItem {
-                                Button {
-                                    leftButtonAction()
-                                } label: {
-                                    HStack {
-                                        Image(systemName: "forward")
-                                        Text("Next")
-                                    }
-                                    .padding(5)
-                                    .foregroundColor(Color.white)
-                                    .background(Color.secondary)
-                                    .opacity(0.7)
-                                    .cornerRadius(10)
-                                }
-                            }
-                        }
-        )
-        #endif
-    }
-}
-
-extension View {
-    func toolBarModifier(toggleMenu: @escaping () -> Void, leftButtonAction: @escaping () -> Void, rightButtonAction: @escaping () -> Void) -> some View {
-        self.modifier(ToolBarModifier(toggleMenu: toggleMenu, leftButtonAction: leftButtonAction, rightButtonAction: rightButtonAction))
-    }
-}
-
 
 
 struct NavigationLayoutStyle: ViewModifier {
-    
     func body(content: Content) -> some View {
         #if os(iOS)
         if UIDevice.current.userInterfaceIdiom == .phone {
@@ -191,5 +98,80 @@ struct HideNavigationBarBackButton: ViewModifier {
 extension View {
     func hideNavigationBarBackButton() -> some View {
         self.modifier(HideNavigationBarBackButton())
+    }
+}
+
+// MARK: - Struct Definition
+struct ButtonModifier: ViewModifier {
+    
+    // MARK: - Body
+    func body(content: Content) -> some View {
+        
+        // MARK: - Return View
+        return content
+            .padding(5)
+            .foregroundColor(Color.white)
+            .background(Color.secondary)
+            .opacity(0.7)
+            .cornerRadius(10)
+    }
+}
+
+// MARK: - Extension View
+extension View {
+    // MARK: - Define Function
+    func buttonModifier() -> some View {
+        self.modifier(ButtonModifier()) // Apply Custom Modifier
+    }
+}
+
+
+enum OperatingSystem {
+    case macOS
+    case iOS
+    case tvOS
+    case watchOS
+    
+    #if os(macOS)
+    static let current = macOS
+    #elseif os(iOS)
+    static let current = iOS
+    #elseif os(tvOS)
+    static let current = tvOS
+    #elseif os(watchOS)
+    static let current = watchOS
+    #else
+    #error("Unsupported platform")
+    #endif
+}
+
+extension View {
+    /**
+     OS specific Modifier
+     
+     ```
+     struct ContentView: View {
+     var body: some View {
+     Text("Unicorn")
+     .font(.system(size: 10))
+     .ifOS(.macOS, .tvOS) {
+     $0.font(.system(size: 20))
+     }
+     }
+     }
+     ```
+     - Parameters:
+     - operatingSystems: .macOS / .iOS / .tvOS / . watchOS
+     - modifier: modifier to apply
+     
+     - Returns: View
+     */
+    @ViewBuilder
+    func ifOS<Content: View>(_ operatingSystems: OperatingSystem..., modifier: @escaping (Self) -> Content) -> some View {
+        if operatingSystems.contains(OperatingSystem.current) {
+            modifier(self)
+        } else {
+            self
+        }
     }
 }

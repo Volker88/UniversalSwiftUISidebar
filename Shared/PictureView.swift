@@ -20,7 +20,6 @@ struct PictureView: View {
         Image("\(name)")
             .resizable()
             .aspectRatio(contentMode: .fit)
-            
     }
 }
 

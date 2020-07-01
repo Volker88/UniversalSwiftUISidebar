@@ -11,12 +11,12 @@ struct NavigationBar: View {
     var body: some View {
         List{
             NavigationLink(destination: ContentView().hideNavigationBarBackButton()){
-                Text("Home")
+                Label("Home", systemImage: "house")
             }
             
             ForEach(1..<11) { i in
                 NavigationLink(destination: DetailView(viewNumber: "\(i)")) {
-                    Text("View \(i)")
+                    Label("View \(i)", systemImage: "doc.plaintext")
                 }
             }
         }
