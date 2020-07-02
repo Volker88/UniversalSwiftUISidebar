@@ -1,33 +1,35 @@
 //
-//  UniversalSwiftUISidebarApp.swift
+//  UniversalSideBarApp.swift
 //  Shared
 //
-//  Created by Volker Schmitt on 27.06.20.
+//  Created by Volker Schmitt on 01.07.20.
 //
 
 import SwiftUI
 
 @main
-struct UniversalSwiftUISidebarApp: App {
-    
-    var body: some Scene {
+struct UniversalSideBarApp: App {
+    @SceneBuilder var body: some Scene {
         WindowGroup {
             NavigationView {
-                #if os(iOS)
+                #if os(macOS)
+                SideBar()
+                HomeView()
+                #elseif os(iOS)
                 if UIDevice.current.userInterfaceIdiom == .pad {
-                    NavigationBar()
+                    SideBar()
+                    HomeView()
+                } else if UIDevice.current.userInterfaceIdiom == .phone {
+                    ContentView()
                 }
-                #elseif os(macOS)
-                NavigationBar()
                 #endif
-                ContentView()
-                    
             }
-            .customNavigationLayoutStyle()
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .customNavigationLayoutStyle() // apply StackNavigationStyle on iPhone to avoid default sidebar in iPhone 11 Pro Max in portrait mode
         }
+        #if os(macOS)
+        Settings {
+            SettingsView()
+        }
+        #endif
     }
 }
-
-
-
